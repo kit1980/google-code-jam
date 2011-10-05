@@ -7,7 +7,7 @@
 %
 % Language: ECLiPSe Prolog (http://eclipseclp.org/)
 % Tested with ECLiPSe Version 6.0 #188
-% Usage: eclipse -b TriangleAreas.ecl -e solve < in-file > out-file
+% Usage: eclipse -b TriangleAreas.ecl -e main < in-file > out-file
 
 :- lib(ic).
 :- lib(util).
@@ -45,7 +45,7 @@ print_case(Case_num, [X1, Y1, X2, Y2, X3, Y3]) :-
 print_case(Case_num, []) :-
     printf("Case #%d: IMPOSSIBLE\n", [Case_num]).
 
-solve :-
+main :-
     read_line(C_str),
     number_string(C, C_str),
     ( count(K, 1, C) do 

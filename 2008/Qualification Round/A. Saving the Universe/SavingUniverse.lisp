@@ -27,7 +27,7 @@
 (defun do-case (case-num s queries)
   (print-case case-num (switches s queries)))
 
-(defun solve ()
+(defun main ()
   (dotimes (case-num-0 (read))
     (let (s (queries nil))
 
@@ -41,5 +41,5 @@
 
       (do-case (1+ case-num-0) s queries))))
 
-(solve)
+(main)
 (quit)
