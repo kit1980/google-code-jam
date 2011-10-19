@@ -27,7 +27,7 @@ model(N, M, A, [X1, Y1, X2, Y2, X3, Y3]) :-
     area2(X1, Y1, X2, Y2, X3, Y3, A).
 
 find(Points) :-
-    search(Points, 0, input_order, indomain_split, complete, []).
+    search(Points, 0, first_fail, indomain_split, complete, []).
 
 do_case(Case_num, Case_str) :-
     ( 
