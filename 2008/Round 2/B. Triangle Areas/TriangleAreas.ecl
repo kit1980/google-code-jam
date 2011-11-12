@@ -1,6 +1,6 @@
 % Google Code Jam 
 % Round 2 2008
-% Problem B. Triangle Areas
+% B. Triangle Areas
 % https://code.google.com/codejam/contest/dashboard?c=32001#s=p1
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
