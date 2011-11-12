@@ -10,7 +10,7 @@
 % Usage: eclipse -b TriangleAreas.ecl -e main < in-file > out-file
 
 :- lib(ic).
-:- lib(util).
+:- lib(util). % for read_line/1
 
 % Triangle's area * 2
 area2(X1, Y1, X2, Y2, X3, Y3, A) :- 
@@ -41,9 +41,9 @@ do_case(Case_num, Case_str) :-
         ).
 
 print_case(Case_num, [X1, Y1, X2, Y2, X3, Y3]) :-
-    printf("Case #%d: %d %d %d %d %d %d\n", [Case_num, X1, Y1, X2, Y2, X3, Y3]).
+    printf("Case #%w: %w %w %w %w %w %w\n", [Case_num, X1, Y1, X2, Y2, X3, Y3]).
 print_case(Case_num, []) :-
-    printf("Case #%d: IMPOSSIBLE\n", [Case_num]).
+    printf("Case #%w: IMPOSSIBLE\n", [Case_num]).
 
 main :-
     read_line(C_str),
