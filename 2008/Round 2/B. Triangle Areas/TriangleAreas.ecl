@@ -35,10 +35,10 @@ do_case(Case_num, Case_str) :-
         number_string(N, N_str), number_string(M, M_str), number_string(A, A_str),
         model(N, M, A, Points),
         find(Points),
-        print_case(Case_num, Points)
-    ) ; (
-            print_case(Case_num, [])
-        ).
+        print_case(Case_num, Points) 
+    ; 
+        print_case(Case_num, []) 
+    ).
 
 print_case(Case_num, [X1, Y1, X2, Y2, X3, Y3]) :-
     printf("Case #%w: %w %w %w %w %w %w\n", [Case_num, X1, Y1, X2, Y2, X3, Y3]).
