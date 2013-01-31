@@ -26,11 +26,8 @@ diamond(A) :-
         inherit(B1, B2)
     ).
 
-diamond :-
-    diamond(_).
-
 do_case(Case_num) :-
-    ( diamond -> Result = "Yes" ; Result = "No" ),
+    ( diamond(_) -> Result = "Yes" ; Result = "No" ),
     format("Case #~w: ~s\n", [Case_num, Result]).
     
 main :-
