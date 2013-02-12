@@ -3,7 +3,7 @@
 % C. Mountain View
 % https://code.google.com/codejam/contest/1842485/dashboard#s=p2
 %
-% Straightforward mixed-integer programming solution in ECLiPSe Prolog.
+% Straightforward integer linear programming solution in ECLiPSe Prolog.
 % Works for the small input only.
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
@@ -30,9 +30,9 @@ model(Xs, Ys) :-
         Yi $:: 0..1000000000 ),
     
     ( for(I, 1, N - 1), param(Xs, Ys, N) do
-        ( for(J, I + 1, Xs[I] - 1), param(I, Xs, Ys, Xi) do
+        ( for(J, I + 1, Xs[I] - 1), param(I, Xs, Ys) do
             (Xs[I] - I) * (Ys[J] - Ys[I]) + 1 $=< (Ys[Xs[I]] - Ys[I]) * (J - I) ),
-        ( for(J, Xs[I] + 1, N), param(I, Xs, Ys, Xi) do
+        ( for(J, Xs[I] + 1, N), param(I, Xs, Ys) do
             (Xs[I] - I) * (Ys[J] - Ys[I]) $=< (Ys[Xs[I]] - Ys[I]) * (J - I) ) ).
         
 find :-
@@ -55,7 +55,7 @@ do_case(Case_num, Xs) :-
 main :-
     read([T]),
     ( for(Case_num, 1, T) do
-        read([N]),
+        read([_N]),
         read(Xs_list),
         list_array(Xs_list, Xs),
         do_case(Case_num, Xs) ).
