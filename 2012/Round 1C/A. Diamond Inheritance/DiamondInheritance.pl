@@ -3,6 +3,10 @@
 % A. Diamond Inheritance
 % https://code.google.com/codejam/contest/1781488/dashboard#s=p0
 %
+% Backtracking/memoization solution in B-Prolog.
+% 
+% Author: Sergey Dymchenko <kit1980@gmail.com>
+%
 % B-Prolog 7.8#1 - http://www.probp.com/
 % Usage:
 % sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' in-file | bp -g "['DiamondInheritance.pl'],main,halt" -l | tail -n +5 > out-file
