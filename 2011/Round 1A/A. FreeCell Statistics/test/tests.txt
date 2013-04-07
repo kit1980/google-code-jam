@@ -1,0 +1,11 @@
+prologify | compile-run FreeCellStatistics-lp.ecl
+
+<
+3
+1 100 50
+10 10 100
+9 80 56
+>
+Case #1: Possible
+Case #2: Broken
+Case #3: Possible
