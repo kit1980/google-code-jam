@@ -42,9 +42,8 @@ do_case(Case_num, N, Customers) :-
     nl.
 
 group([], []).
-group([X, Y | T], Customer) :-
-    group(T, GT),
-    Customer = [(X, Y) | GT].
+group([X, Y | T], [(X, Y) | GT]) :-
+    group(T, GT).
 
 main :-
     read([C]),
