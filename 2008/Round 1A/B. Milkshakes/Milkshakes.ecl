@@ -27,7 +27,7 @@ model(N, Customers, Flavours, N_malted) :-
         eval(Sum) #>= 1 ).
 
 find(Flavours, N_malted) :-
-    labeling([N_malted]),
+    indomain(N_malted),
     labeling(Flavours).
 
 do_case(Case_num, N, Customers) :-
