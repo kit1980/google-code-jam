@@ -1,4 +1,5 @@
-python AlienLanguage.py
+python AlienLanguage-regex.py
+compile-run AlienLanguage-regex.ecl 
 
 <
 3 5 4
