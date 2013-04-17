@@ -35,5 +35,5 @@ main :-
         ( for(I, 1, N), param(Field, M) do
             read(Row),
             ( foreach(Elem, Row), for(J, 1, M), param(Field, I) do
-                subscript(Field, [I, J], Elem) ) ),
+                Field[I, J] #= Elem ) ),
         do_case(Case_num, Field) ).
