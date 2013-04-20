@@ -17,7 +17,7 @@ def solve(s):
     min_map = {}
     min_s = ""
     for c in s:
-        if not c in min_map.keys():
+        if not c in min_map:
             min_map[c] = order[curr_pos]
             curr_pos += 1
         min_s += min_map[c]
