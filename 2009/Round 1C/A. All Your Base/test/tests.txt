@@ -1,0 +1,24 @@
+python AllYourBase.py
+
+<
+3
+11001001
+cats
+zig
+>
+Case #1: 201
+Case #2: 75
+Case #3: 11
+
+<
+1
+a
+>
+Case #1: 1
+
+<
+1
+aa
+>
+Case #1: 3
+
