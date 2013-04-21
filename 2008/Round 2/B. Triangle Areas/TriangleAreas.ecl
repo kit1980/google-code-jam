@@ -27,12 +27,9 @@ model(N, M, A, [X1, Y1, X2, Y2, X3, Y3]) :-
     X1 #= 0, Y1 #= 0, % we can safely put one point in (0, 0)
     area2(X1, Y1, X2, Y2, X3, Y3, A).
 
-find(Points) :-
-    search(Points, 0, first_fail, indomain_split, complete, []).
-
 do_case(Case_num, N, M, A) :-
     printf("Case #%w: ", [Case_num]),
-    ( model(N, M, A, Points), find(Points) ->
+    ( model(N, M, A, Points), labeling(Points) ->
         printf("%w %w %w %w %w %w", Points)
     ; 
         write("IMPOSSIBLE") 
