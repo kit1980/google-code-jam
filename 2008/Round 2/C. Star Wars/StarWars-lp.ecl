@@ -3,7 +3,7 @@
 % C. Star Wars
 % https://code.google.com/codejam/contest/32001/dashboard#s=p2
 %
-% Linear programming colution in ECLiPse Prolog.
+% Linear programming solution in ECLiPse Prolog.
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
