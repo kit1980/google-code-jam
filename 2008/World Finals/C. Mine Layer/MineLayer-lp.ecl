@@ -30,10 +30,9 @@ model(Clues, Mines, MiddleSum) :-
         ),
         Clues[I, J] $= eval(S)
     ),
-    ( for(J, 1, C), fromto(0, Prev, Curr, Expr), param(Mines, R) do
-        Curr = Prev + Mines[R // 2 + 1, J] ),
-    integers(MiddleSum),
-    MiddleSum $= eval(Expr).
+    ( for(J, 1, C), fromto(0, Prev, Curr, MiddleSum), param(Mines, R) do
+        Curr $= Prev + Mines[R // 2 + 1, J] ),
+    integers(MiddleSum).
 
 find(MiddleSum, MiddleSumVal) :-
     eplex_solver_setup(max(MiddleSum)),

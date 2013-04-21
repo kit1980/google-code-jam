@@ -30,9 +30,8 @@ model(Clues, Mines, MiddleSum) :-
         ),
         Clues[I, J] #= eval(S)
     ),
-    ( for(J, 1, C), fromto(0, Prev, Curr, Expr), param(Mines, R) do
-        Curr = Prev + Mines[R // 2 + 1, J] ),
-    MiddleSum #= eval(Expr).
+    ( for(J, 1, C), fromto(0, Prev, Curr, MiddleSum), param(Mines, R) do
+        Curr #= Prev + Mines[R // 2 + 1, J] ).
 
 find(Mines, MiddleSum) :-
     Cost #= -MiddleSum,
