@@ -41,13 +41,13 @@ model(Clues, Mines, MiddleSum) :-
 find(MiddleSum, MiddleSumVal) :-
     eplex_solver_setup(max(MiddleSum)),
     eplex_solve(_),
-    eplex_var_get(MiddleSum, typed_solution, MiddleSumVal).
+    eplex_var_get(MiddleSum, typed_solution, MiddleSumVal),
+    eplex_cleanup.
     
 do_case(Case_num, Clues) :-
     model(Clues, _Mines, MiddleSum),
     find(MiddleSum, MiddleSumVal),
-    printf("Case #%w: %w\n", [Case_num, MiddleSumVal]),
-    eplex_cleanup.
+    printf("Case #%w: %w\n", [Case_num, MiddleSumVal]).
 
 main :-
     read([N]),
