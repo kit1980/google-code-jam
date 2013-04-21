@@ -28,11 +28,15 @@ model(Clues, Mines, MiddleSum) :-
                 Curr = Prev
             )
         ),
-        Clues[I, J] $= eval(S)
+        % eval(S) is not requred for eplex, but would be required for ic.
+        % Using $=/2 instead of =/2 for constructing S is much slower (contrary to ic).
+        Clues[I, J] $= S 
     ),
-    ( for(J, 1, C), fromto(0, Prev, Curr, MiddleSum), param(Mines, R) do
-        Curr $= Prev + Mines[R // 2 + 1, J] ),
-    integers(MiddleSum).
+    ( for(J, 1, C), fromto(0, Prev, Curr, Expr), param(Mines, R) do
+        Curr = Prev + Mines[R // 2 + 1, J] ),
+    integers(MiddleSum),
+    % eval(Expr) is not requred for eplex, but would be required for ic.
+    MiddleSum $= Expr.
 
 find(MiddleSum, MiddleSumVal) :-
     eplex_solver_setup(max(MiddleSum)),

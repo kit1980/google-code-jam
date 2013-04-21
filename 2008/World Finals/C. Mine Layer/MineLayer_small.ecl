@@ -23,12 +23,16 @@ model(Clues, Mines, MiddleSum) :-
     ( multifor([I, J], 1, [R, C]), param(R, C, Clues, Mines) do
         ( multifor([Di, Dj], -1, 1), fromto(0, Prev, Curr, S), param(I, J, R, C, Mines) do
             ( I + Di > 0, I + Di =< R, J + Dj > 0, J + Dj =< C ->
-                Curr = Prev + Mines[I + Di, J + Dj]
+                Curr #= Prev + Mines[I + Di, J + Dj]
             ;
-                Curr = Prev
+                Curr #= Prev
             )
         ),
-        Clues[I, J] #= eval(S)
+        % http://eclipseclp.org/doc/bips/lib/ic/index.html says:
+        % 'one must wrap the variable Expr in an eval'.
+        % Here eval(S) is not needed because #=/2 was used for constructing S.
+        % Using #=/2 for constructing S works a bit faster than using =/2 with eval.
+        Clues[I, J] #= S
     ),
     ( for(J, 1, C), fromto(0, Prev, Curr, MiddleSum), param(Mines, R) do
         Curr #= Prev + Mines[R // 2 + 1, J] ).
