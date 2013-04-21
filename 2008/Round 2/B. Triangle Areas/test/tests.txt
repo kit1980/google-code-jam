@@ -1,0 +1,11 @@
+prologify | compile-run TriangleAreas.ecl
+
+<
+3
+1 1 1
+1 2 64
+10 10 1
+>
+Case #1: 0 0 0 1 1 1
+Case #2: IMPOSSIBLE
+Case #3: 1 1 2 3 5 8

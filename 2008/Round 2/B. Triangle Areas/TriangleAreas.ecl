@@ -1,16 +1,17 @@
 % Google Code Jam 
 % Round 2 2008
 % B. Triangle Areas
-% https://code.google.com/codejam/contest/dashboard?c=32001#s=p1
+% https://code.google.com/codejam/contest/32001/dashboard#s=p1
+%
+% Constaint programming solution in ECLiPSe Prolog.
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
-% Language: ECLiPSe Prolog (http://eclipseclp.org/)
-% Tested with ECLiPSe Version 6.0 #188
-% Usage: eclipse -b TriangleAreas.ecl -e main < in-file > out-file
+% ECLiPSe 6.0 #199 - http://www.eclipseclp.org/
+% Usage:
+% sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' in-file | eclipse -b TriangleAreas.ecl -e main > out-file
 
 :- lib(ic).
-:- lib(util). % for read_line/1
 
 % Triangle's area * 2
 area2(X1, Y1, X2, Y2, X3, Y3, A) :- 
@@ -29,25 +30,17 @@ model(N, M, A, [X1, Y1, X2, Y2, X3, Y3]) :-
 find(Points) :-
     search(Points, 0, first_fail, indomain_split, complete, []).
 
-do_case(Case_num, Case_str) :-
-    ( 
-        split_string(Case_str, " ", "", [N_str, M_str, A_str]),
-        number_string(N, N_str), number_string(M, M_str), number_string(A, A_str),
-        model(N, M, A, Points),
-        find(Points),
-        print_case(Case_num, Points) 
+do_case(Case_num, N, M, A) :-
+    printf("Case #%w: ", [Case_num]),
+    ( model(N, M, A, Points), find(Points) ->
+        printf("%w %w %w %w %w %w", Points)
     ; 
-        print_case(Case_num, []) 
-    ).
-
-print_case(Case_num, [X1, Y1, X2, Y2, X3, Y3]) :-
-    printf("Case #%w: %w %w %w %w %w %w\n", [Case_num, X1, Y1, X2, Y2, X3, Y3]).
-print_case(Case_num, []) :-
-    printf("Case #%w: IMPOSSIBLE\n", [Case_num]).
+        write("IMPOSSIBLE") 
+    ),
+    nl.
 
 main :-
-    read_line(C_str),
-    number_string(C, C_str),
-    ( count(K, 1, C) do 
-        read_line(Case_str),
-        do_case(K, Case_str) ).
+    read([C]), 
+    ( for(Case_num, 1, C) do 
+        read([N, M, A]),
+        do_case(Case_num, N, M, A) ).
