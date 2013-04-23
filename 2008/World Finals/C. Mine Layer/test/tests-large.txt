@@ -1,0 +1,4 @@
+prologify | compile-run MineLayer-lp.ecl
+
+< cat test/C-large-practice.in
+> cat test/C-large-practice.out

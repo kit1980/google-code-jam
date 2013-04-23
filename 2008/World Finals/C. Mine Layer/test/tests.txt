@@ -14,3 +14,6 @@ prologify | compile-run MineLayer-lp.ecl
 >
 Case #1: 1
 Case #2: 1
+
+< cat test/C-small-practice.in
+> cat test/C-small-practice.out
