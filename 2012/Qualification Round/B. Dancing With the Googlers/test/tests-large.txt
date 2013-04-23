@@ -1,0 +1,10 @@
+prologify | compile-run DancingWithTheGooglers-lp.ecl
+
+<
+1
+100 2 8 29 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 29 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18 20 8 18 18 29 20 8 18 18
+>
+Case #1: 14
+
+< cat test/B-large-practice.in
+> cat test/B-large-practice.out

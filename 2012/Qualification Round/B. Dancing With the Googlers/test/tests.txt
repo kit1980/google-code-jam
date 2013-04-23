@@ -1,0 +1,17 @@
+prologify | compile-run DancingWithTheGooglers-lp.ecl
+prologify | compile-run DancingWithTheGooglers_small.ecl
+
+<
+4
+3 1 5 15 13 11
+3 0 8 23 22 21
+2 1 1 8 0
+6 2 8 29 20 8 18 18 21
+>
+Case #1: 3
+Case #2: 2
+Case #3: 1
+Case #4: 3
+
+< cat test/B-small-practice.in
+> cat test/B-small-practice.out
