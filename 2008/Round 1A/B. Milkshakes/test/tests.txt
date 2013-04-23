@@ -14,3 +14,12 @@ prologify | compile-run Milkshakes.ecl
 >
 Case #1: 1 0 0 0 0
 Case #2: IMPOSSIBLE
+
+< cat test/B-small-practice.in
+> cat test/B-small-practice.out
+
+< cat test/B-large-practice.in
+> cat test/B-large-practice.out
+
+
+
