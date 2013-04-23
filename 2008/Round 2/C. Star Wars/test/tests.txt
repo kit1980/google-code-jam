@@ -1,4 +1,4 @@
-prologify | compile-run StarWars-lp.ecl
+prologify | compile-run StarWars-lp.ecl | python test/filter.py
 
 <
 3
@@ -13,7 +13,13 @@ prologify | compile-run StarWars-lp.ecl
 1 0 0 1
 2 1 1 4
 3 2 3 2
->
+> python test/filter.py
 Case #1: 3.500000
 Case #2: 0.000000
 Case #3: 2.333333
+
+< cat test/C-small-practice.in
+> cat test/C-small-practice.out | python test/filter.py
+
+< cat test/C-large-practice.in
+> cat test/C-large-practice.out | python test/filter.py
