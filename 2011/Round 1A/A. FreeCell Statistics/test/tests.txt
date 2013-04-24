@@ -9,3 +9,9 @@ prologify | compile-run FreeCellStatistics-lp.ecl
 Case #1: Possible
 Case #2: Broken
 Case #3: Possible
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
+
+< cat test/A-large-practice.in
+> cat test/A-large-practice.out
