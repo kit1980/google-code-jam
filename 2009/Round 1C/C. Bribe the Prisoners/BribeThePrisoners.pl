@@ -3,7 +3,7 @@
 % C. Bribe the Prisoners
 % https://code.google.com/codejam/contest/189252/dashboard#s=p2 
 %
-% Dynamic programming solution in B-Prolog.
+% Top-down dynamic programming solution in B-Prolog.
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
