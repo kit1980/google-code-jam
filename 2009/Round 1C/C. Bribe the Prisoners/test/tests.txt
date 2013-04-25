@@ -1,0 +1,17 @@
+prologify | compile-run BribeThePrisoners.pl
+
+<
+2
+8 1
+3
+20 3
+3 6 14
+>
+Case #1: 7
+Case #2: 35
+
+< cat test/C-small-practice.in
+> cat test/C-small-practice.out
+
+< cat test/C-large-practice.in
+> cat test/C-large-practice.out
