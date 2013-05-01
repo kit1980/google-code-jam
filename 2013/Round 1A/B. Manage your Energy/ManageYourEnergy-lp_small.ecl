@@ -5,7 +5,7 @@
 %
 % (Integer) linear programming solution in ECLiPSe Prolog.
 % Works for the small input only because of imprecise representation of large integers by floating-point numbers.
-% Only several cases from the large input fail.
+% Only several cases from the large input fail (after removing all integer constraints).
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
