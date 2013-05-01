@@ -1,0 +1,23 @@
+python StoreCredit-potassco.py
+
+<
+3
+100
+3
+5 75 25
+200
+7
+150 24 79 50 88 345 3
+8
+8
+2 1 9 4 4 56 90 3
+>
+Case #1: 2 3
+Case #2: 1 4
+Case #3: 4 5
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
+
+< cat test/A-large-practice.in
+> cat test/A-large-practice.out
