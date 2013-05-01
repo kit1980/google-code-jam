@@ -1,0 +1,7 @@
+python Bullseye.py
+
+< cat test/A-large.in
+> cat test/A-large.out
+
+< cat test/A-large-practice.in
+> cat test/A-large-practice.out

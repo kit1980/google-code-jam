@@ -1,0 +1,35 @@
+python Bullseye.py
+prologify | compile-run Bullseye_small.ecl
+
+<
+5
+1 9
+1 10
+3 40
+1 1000000000000000000
+10000000000000000 1000000000000000000
+
+>
+Case #1: 1
+Case #2: 2
+Case #3: 3
+Case #4: 707106780
+Case #5: 49
+
+<
+1
+1 2000000000000000000
+>
+Case #1: 999999999
+
+<
+1
+1000000000000000000 1
+>
+Case #1: 0
+
+< cat test/A-small-attempt0.in
+> cat test/A-small-attempt0.out
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
