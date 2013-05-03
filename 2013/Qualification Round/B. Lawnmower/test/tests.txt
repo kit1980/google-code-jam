@@ -143,3 +143,15 @@ Case #3: YES
 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100 100
 >
 Case #1: YES
+
+< cat test/B-small-attempt0.in
+> cat test/B-small-attempt0.out
+
+< cat test/B-small-practice.in
+> cat test/B-small-practice.out
+
+< cat test/B-large.in
+> cat test/B-large.out
+
+< cat test/B-large-practice.in
+> cat test/B-large-practice.out
