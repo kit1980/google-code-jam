@@ -1,0 +1,54 @@
+python preprocess.py | prologify | compile-run WhatAreBirds.ecl
+
+<
+3
+5
+1000 1000 BIRD
+2000 1000 BIRD
+2000 2000 BIRD
+1000 2000 BIRD
+1500 2010 NOT BIRD
+3
+1500 1500
+900 900
+1400 2020
+3
+500 700 NOT BIRD
+501 700 BIRD
+502 700 NOT BIRD
+2
+501 600
+502 501
+1
+100 100 NOT BIRD
+3
+107 93
+86 70
+110 115
+>
+Case #1:
+BIRD
+UNKNOWN
+NOT BIRD
+Case #2:
+UNKNOWN
+NOT BIRD
+Case #3:
+UNKNOWN
+UNKNOWN
+UNKNOWN
+
+<
+1
+0
+1
+100 100
+>
+Case #1:
+UNKNOWN
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
+
+< cat test/A-large-practice.in
+> cat test/A-large-practice.out
