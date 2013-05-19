@@ -7,7 +7,7 @@
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
-% ECLiPSe 6.0 #199 - http://www.eclipseclp.org/
+% ECLiPSe 6.0 #201 - http://www.eclipseclp.org/
 % Usage:
 % sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' in-file | eclipse -b FreeCellStatistics-lp.ecl -e main > out-file
 

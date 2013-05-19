@@ -7,7 +7,7 @@
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
-% ECLiPSe 6.0 #199 - http://www.eclipseclp.org/
+% ECLiPSe 6.0 #201 - http://www.eclipseclp.org/
 % Usage:
 % python preprocess.py < in-file | sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' | eclipse -b WhatAreBirds.ecl -e main > out-file
 
