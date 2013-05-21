@@ -1,0 +1,4 @@
+prologify | compile-run SafetyInNumbers-lp.ecl | python test/filter.py
+
+< cat test/A-large-practice.in
+> cat test/A-large-practice.out | python test/filter.py

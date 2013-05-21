@@ -1,0 +1,17 @@
+prologify | compile-run SafetyInNumbers_small.ecl | python test/filter.py
+prologify | compile-run SafetyInNumbers-lp.ecl | python test/filter.py
+
+<
+4
+2 20 10
+2 10 0
+4 25 25 25 25
+3 24 30 21
+> python test/filter.py
+Case #1: 33.333333 66.666667
+Case #2: 0.000000 100.000000
+Case #3: 25.0 25.0 25.0 25.0
+Case #4: 34.666667 26.666667 38.666667
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out | python test/filter.py
