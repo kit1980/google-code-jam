@@ -1,0 +1,12 @@
+prologify | compile-run CropTriangles_small.ecl
+
+<
+2
+4 10 7 1 2 0 1 20
+6 2 0 2 1 1 2 11
+>
+Case #1: 1
+Case #2: 2
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
