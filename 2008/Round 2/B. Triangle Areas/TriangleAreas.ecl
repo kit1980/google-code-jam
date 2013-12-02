@@ -3,7 +3,7 @@
 % B. Triangle Areas
 % https://code.google.com/codejam/contest/32001/dashboard#s=p1
 %
-% Constaint programming solution in ECLiPSe Prolog.
+% Constraint programming solution in ECLiPSe Prolog.
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
