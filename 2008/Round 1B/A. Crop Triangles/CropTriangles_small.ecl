@@ -17,8 +17,7 @@
 :- lib(ic). % lib(gfd) uses more time
 
 model(Xs, Ys, I1, I2, I3) :-
-    I1 #>= 1, I2 #>= 1, I3 #>= 1,
-    I1 #< I2, I2 #< I3,
+    I1 #< I2, I2 #< I3, % symmetry breaking
     element(I1, Xs, X1), element(I2, Xs, X2), element(I3, Xs, X3),
     element(I1, Ys, Y1), element(I2, Ys, Y2), element(I3, Ys, Y3),
     (X1 + X2 + X3) / 3 #= _, % integrality of (X1 + X2 + X3) / 3
