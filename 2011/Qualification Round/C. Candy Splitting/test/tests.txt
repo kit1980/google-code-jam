@@ -1,0 +1,22 @@
+python CandySplitting.py
+
+<
+2
+5
+1 2 3 4 5
+3
+3 5 6
+>
+Case #1: NO
+Case #2: 11
+
+< cat test/C-small-attempt0.in
+> cat test/C-small-attempt0.out
+
+< cat test/C-large.in
+> cat test/C-large.out
+
+< cat test/C-large-practice.in
+> cat test/C-large-practice.out
+
+
