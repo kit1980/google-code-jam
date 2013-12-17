@@ -1,0 +1,76 @@
+python Consonants_small.py
+
+<
+4
+quartz 3
+straight 3
+gcj 2
+tsetse 2
+>
+Case #1: 4
+Case #2: 11
+Case #3: 3
+Case #4: 11
+
+<
+1
+ssss 2
+>
+Case #1: 6
+
+<
+1
+ssss 3
+>
+Case #1: 3
+
+<
+1
+a 1
+>
+Case #1: 0
+
+<
+1
+ssss 1
+>
+Case #1: 10
+
+<
+1
+aaas 1
+>
+Case #1: 4
+
+<
+1
+assa 2
+>
+Case #1: 4
+
+<
+10
+sadofnsdonf 4
+ijoernvenvf 3
+klmvdflkvfdv 4
+sdklvmlkmlmfv 5
+skmvlmlvmfldmv 7
+kmlkmvsdvsdvwe 3
+mlmsdfvldmfvoo 1
+dlfkvmldfkvmipp 3
+skmvlmlvmfldmv 9
+kmlkmvsdvsdvwe 1
+>
+Case #1: 20
+Case #2: 29
+Case #3: 45
+Case #4: 45
+Case #5: 36
+Case #6: 77
+Case #7: 102
+Case #8: 85
+Case #9: 21
+Case #10: 104
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
