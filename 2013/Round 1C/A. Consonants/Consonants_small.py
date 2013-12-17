@@ -1,4 +1,14 @@
-
+# Google Code Jam
+# Round 1C 2013
+# A. Consonants
+# https://code.google.com/codejam/contest/2437488/dashboard#s=p0
+#
+# Brute force solution in Python.
+# Works fast enough for the small inputs only.
+#
+# Author: Sergey Dymchenko <kit1980@gmail.com>
+#
+# Python 2.6.5
 
 def nvalue(s, n):
     vovels = set("aeiou")
