@@ -1,0 +1,14 @@
+python PerfectHarmony_small.py
+
+<
+2
+3 2 100
+3 5 7
+4 8 16
+1 20 5 2
+>
+Case #1: NO
+Case #2: 10
+
+< cat test/C-small-attempt0.in
+> cat test/C-small-attempt0.out
