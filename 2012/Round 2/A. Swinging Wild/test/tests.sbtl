@@ -1,0 +1,30 @@
+prologify | compile-run SwingingWild_small.pl
+
+<
+4
+3
+3 4
+4 10
+6 10
+9
+3
+3 4
+4 10
+7 10
+9
+2
+6 6
+10 3
+13
+2
+6 6
+10 3
+14
+>
+Case #1: YES
+Case #2: NO
+Case #3: YES
+Case #4: NO
+
+< cat test/A-small-practice.in 
+> cat test/A-small-practice.out
