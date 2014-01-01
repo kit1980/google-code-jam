@@ -1,0 +1,12 @@
+python PerfectGame_small.py
+
+<
+1
+4
+1 1 1 1
+50 0 20 20
+>
+Case #1: 0 2 3 1
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
