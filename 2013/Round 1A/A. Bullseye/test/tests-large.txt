@@ -1,4 +1,5 @@
 python Bullseye.py
+prologify | compile-run Bullseye.pl
 
 < cat test/A-large.in
 > cat test/A-large.out

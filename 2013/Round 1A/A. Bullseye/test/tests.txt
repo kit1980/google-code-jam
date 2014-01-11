@@ -1,5 +1,6 @@
 python Bullseye.py
 prologify | compile-run Bullseye_small.ecl
+prologify | compile-run Bullseye.pl
 
 <
 5
