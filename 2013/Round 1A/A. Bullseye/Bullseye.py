@@ -13,15 +13,15 @@ def paint(r, n):
     return 2*r*n + 2*n*n - n
 
 def find_max(r, t):
-    min_n = 0
-    max_n = t + 1
-    while max_n - min_n > 1:
-        med_n = (max_n - min_n) // 2 + min_n
-        if paint(r, med_n) <= t:
-            min_n = med_n
+    lo = 0
+    hi = t
+    while lo < hi:
+        mid = 1 + (lo + hi) // 2
+        if paint(r, mid) <= t:
+            lo = mid
         else:
-            max_n = med_n
-    return min_n
+            hi = mid - 1
+    return lo
 
 def do_case(case_num, r, t):
     result = find_max(r, t)
