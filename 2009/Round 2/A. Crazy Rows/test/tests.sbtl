@@ -1,0 +1,51 @@
+python preprocess-prolog.py | compile-run CrazyRows_small.pl
+
+<
+3
+2
+10
+11
+3
+001
+100
+010
+4
+1110
+1100
+1100
+1000
+>
+Case #1: 0
+Case #2: 2
+Case #3: 4
+
+<
+1
+8
+00000001
+0000001
+000001
+00001
+0001
+001
+01
+1
+>
+Case #1: 28
+
+<
+1
+8
+0000001
+0000001
+00001
+00001
+001
+1
+1
+1
+>
+Case #1: 22
+
+< cat test/A-small-practice.in
+> cat test/A-small-practice.out
