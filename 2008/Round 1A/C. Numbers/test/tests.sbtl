@@ -1,0 +1,12 @@
+python Numbers_small.py
+
+<
+2
+5
+2
+>
+Case #1: 935
+Case #2: 027
+
+< cat test/C-small-practice.in
+> cat test/C-small-practice.out
