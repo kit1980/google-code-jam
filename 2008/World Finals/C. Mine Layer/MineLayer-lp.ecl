@@ -39,16 +39,16 @@ model(Clues, Mines, MiddleSum) :-
     % eval(MiddleSumExpr) is not required for eplex, but would be required for ic.
     MiddleSum $= MiddleSumExpr.
 
-find(MiddleSum, MiddleSumVal) :-
+find(MiddleSum) :-
     eplex_solver_setup(max(MiddleSum)),
     eplex_solve(_),
-    eplex_var_get(MiddleSum, typed_solution, MiddleSumVal),
+    eplex_var_get(MiddleSum, typed_solution, MiddleSum),
     eplex_cleanup.
     
 do_case(Case_num, Clues) :-
     model(Clues, _Mines, MiddleSum),
-    find(MiddleSum, MiddleSumVal),
-    printf("Case #%w: %w\n", [Case_num, MiddleSumVal]).
+    find(MiddleSum),
+    printf("Case #%w: %w\n", [Case_num, MiddleSum]).
 
 main :-
     read([N]),
