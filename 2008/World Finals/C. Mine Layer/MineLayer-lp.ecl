@@ -7,11 +7,12 @@
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
-% ECLiPSe 6.0 #201 - http://www.eclipseclp.org/
+% ECLiPSe 6.1 #179 - http://www.eclipseclp.org/
 % Usage:
 % sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' in-file | eclipse -b MineLayer-lp.ecl -e main > out-file
 
 :- set_stream(log_output, stderr).
+:- set_stream(warning_output, stderr).
 :- lib(eplex).
 
 model(Clues, Mines, MiddleSum) :-
