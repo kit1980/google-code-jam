@@ -3,7 +3,7 @@
 % A. Osmos
 % https://code.google.com/codejam/contest/2434486/dashboard#s=p0
 %
-% Planinng-based solution in B-Prolog.
+% Planning-based solution in B-Prolog.
 % 
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
