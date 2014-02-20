@@ -27,16 +27,16 @@ model(Xs, Ys, Zs, Ps, X, Y, Z, P) :-
         - (Xi - X) - (Yi - Y) + (Zi - Z) $=< Pi * P,
         - (Xi - X) - (Yi - Y) - (Zi - Z) $=< Pi * P ).
 
-find(P, Pval) :-
+find(P) :-
     eplex_solver_setup(min(P)),
     eplex_solve(_),
-    eplex_var_get(P, typed_solution, Pval),
+    eplex_var_get(P, typed_solution, P),
     eplex_cleanup.
 
 do_case(Case_num, Xs, Ys, Zs, Ps) :-
     model(Xs, Ys, Zs, Ps, _X, _Y, _Z, P),
-    find(P, Pval),
-    printf("Case #%w: %w\n", [Case_num, Pval]).
+    find(P),
+    printf("Case #%w: %w\n", [Case_num, P]).
 
 main :-
     read([T]),
