@@ -7,11 +7,12 @@
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
-% ECLiPSe 6.0 #201 - http://www.eclipseclp.org/
+% ECLiPSe 6.1 #191 - http://www.eclipseclp.org/
 % Usage:
 % sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' in-file | eclipse -b DancingWithTheGooglers-lp.ecl -e main > out-file
 
 :- set_stream(log_output, null).
+:- set_stream(warning_output, null). % Supress "No integer variables - nothing to do" from CBC solver
 :- lib(eplex).
 
 model(S, P, Points, Triplets, GtP) :-
@@ -29,16 +30,16 @@ model(S, P, Points, Triplets, GtP) :-
         Max $>= G * P,
         GtPCurr $= GtPPrev + G ).
       
-find(GtP, GtPVal) :-
+find(GtP) :-
     eplex_solver_setup(max(GtP)),
     eplex_solve(_),
-    eplex_var_get(GtP, typed_solution, GtPVal),
+    eplex_var_get(GtP, typed_solution, GtP),
     eplex_cleanup.
 
 do_case(Case_num, S, P, Points) :-
     model(S, P, Points, _Triplets, GtP),
-    find(GtP, GtPVal),
-    printf("Case #%w: %w\n", [Case_num, GtPVal]).
+    find(GtP),
+    printf("Case #%w: %w\n", [Case_num, GtP]).
 
 main :-
     read([T]),
