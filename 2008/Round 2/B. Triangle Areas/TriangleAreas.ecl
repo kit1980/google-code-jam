@@ -13,24 +13,15 @@
 
 :- lib(ic).
 
-% Triangle's area * 2
-area2(X1, Y1, X2, Y2, X3, Y3, A) :- 
-    A #= abs(
-        X1 * Y2 - X1 * Y3 + 
-        X2 * Y3 - X2 * Y1 + 
-        X3 * Y1 - X3 * Y2
-    ).
-
-model(N, M, A, [X1, Y1, X2, Y2, X3, Y3]) :-
-    [X1, X2, X3] :: 0..N,
-    [Y1, Y2, Y3] :: 0..M,
-    X1 #= 0, Y1 #= 0, % we can safely put one point in (0, 0)
-    area2(X1, Y1, X2, Y2, X3, Y3, A).
+model(N, M, A, [X2, Y2, X3, Y3]) :-
+    [X2, X3] :: 0..N,
+    [Y2, Y3] :: 0..M,
+    A #= abs(X2 * Y3 - X3 * Y2).
 
 do_case(Case_num, N, M, A) :-
     printf("Case #%w: ", [Case_num]),
     ( model(N, M, A, Points), labeling(Points) ->
-        printf("%w %w %w %w %w %w", Points)
+        printf("0 0 %w %w %w %w", Points)
     ; 
         write("IMPOSSIBLE") 
     ),
