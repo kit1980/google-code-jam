@@ -7,34 +7,34 @@
 %
 % Author: Sergey Dymchenko <kit1980@gmail.com>
 %
-% ECLiPSe 6.0 #201 - http://www.eclipseclp.org/
+% ECLiPSe 6.1 #191 - http://www.eclipseclp.org/
 % Usage:
 % sed 's/^ */[/; s/ *$/]./; s/ \+/, /g' in-file | eclipse -b Milkshakes.ecl -e main > out-file
 
 :- lib(ic).
 
-model(N, Customers, Flavours, N_malted) :-
-    dim(Flavours, [N]),
-    Flavours :: 0..1, % 1 - malted
-    flatten_array(Flavours, Flavours_list),
-    sum(Flavours_list) #= N_malted,
-    N_malted #>= 0,
+model(N, Customers, Flavors, NMalted) :-
+    dim(Flavors, [N]),
+    Flavors :: 0..1, % 1 - malted
+    flatten_array(Flavors, FlavorsList),
+    sum(FlavorsList) #= NMalted,
+    NMalted #>= 0,
 
-    ( foreacharg(Customer, Customers), param(Flavours) do
+    ( foreacharg(Customer, Customers), param(Flavors) do
         ( foreach((Flavor, Malted), Customer), 
-            fromto(0, Previous, Current, Sum), param(Flavours) do
-            (Current = Previous + (Flavours[Flavor] =:= Malted)) ),
+            fromto(0, Previous, Current, Sum), param(Flavors) do
+            (Current = Previous + (Flavors[Flavor] =:= Malted)) ),
         eval(Sum) #>= 1 ).
 
-find(Flavours, N_malted) :-
-    indomain(N_malted),
-    labeling(Flavours).
+find(Flavors, NMalted) :-
+    indomain(NMalted),
+    labeling(Flavors).
 
 do_case(Case_num, N, Customers) :-
     printf("Case #%w: ", [Case_num]),
-    ( model(N, Customers, Flavours, N_malted), find(Flavours, N_malted) ->
-        flatten_array(Flavours, Flavours_list),
-        join_string(Flavours_list, " ", Str),
+    ( model(N, Customers, Flavors, NMalted), find(Flavors, NMalted) ->
+        flatten_array(Flavors, FlavorsList),
+        join_string(FlavorsList, " ", Str),
         write(Str)
     ;
         write("IMPOSSIBLE")
