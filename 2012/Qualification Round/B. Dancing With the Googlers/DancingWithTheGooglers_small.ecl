@@ -21,7 +21,7 @@ model(S, P, Points, Triplets, GtP) :-
     length(Triplets, N),
     ( foreach(Triplet, Triplets), foreach(Point, Points), fromto(0, SPrev, SCurr, S), fromto(0, GtPPrev, GtPCurr, GtP), param(P) do
         Triplet = [Min, Med, Max],
-        Triplet #:: 0..10,
+        Triplet :: 0..10,
         Min #=< Med, Med #=< Max,
         Max - Min #=< 2,
         Max + Med + Min #= Point,
