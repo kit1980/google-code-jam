@@ -9,3 +9,9 @@ prologify | compile-run TriangleAreas.ecl
 Case #1: 0 0 0 1 1 1
 Case #2: IMPOSSIBLE
 Case #3: 1 1 2 3 5 8
+
+< cat test/B-small-practice.in
+> cat test/B-small-practice.out
+
+< cat test/B-large-practice.in
+> cat test/B-large-practice.out
