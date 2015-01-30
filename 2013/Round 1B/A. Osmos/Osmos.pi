@@ -1,0 +1,54 @@
+% Google Code Jam
+% Round 1B 2013
+% A. Osmos
+% https://code.google.com/codejam/contest/2434486/dashboard#s=p0
+%
+% Planning-based solution in Picat.
+%
+% Author: Sergey Dymchenko <kit1980@gmail.com>
+%
+% Picat 0.8 - http://picat-lang.org
+
+import planner.
+import util.
+
+final([_, []]) => true.
+
+action([Armin, Others], NewState, Action, Cost) ?=>
+    Others = [Min | Rest],
+    Armin > Min,
+    NewArmin is Armin + Min,
+    Action = absorb,
+    Cost = 0,
+    NewState = [NewArmin, Rest].
+
+action([Armin, Others], NewState, Action, Cost) ?=>
+    Others = [Min | _Rest],
+    Armin =< Min,
+    append(NewOthers, [_], Others),
+    Action = remove,
+    Cost = 1,
+    NewState = [Armin, NewOthers].
+
+action([Armin, Others], NewState, Action, Cost) ?=>
+    Others = [Min | _Rest],
+    Armin =< Min,
+    NewItem is Armin - 1,
+    NewOthers = [NewItem | Others],
+    Action = add,
+    Cost = 1,
+    NewState = [Armin, NewOthers].
+
+do_case(Case_num, Armin, Others) =>
+    Limit = length(Others),
+    best_plan([Armin, sort(Others)], Limit, _Plan, Cost),
+    printf("Case #%w: %w\n", Case_num, Cost).
+
+main =>
+    T = read_int(),
+    foreach(Case_num in 1..T)
+            Armin = read_int(),
+            _N = read_int(),
+            Others = [to_integer(X) : X in split(read_line())],
+            do_case(Case_num, Armin, Others)
+    end.

@@ -1,4 +1,5 @@
 prologify | compile-run Osmos.pl
+picat Osmos.pi
 
 <
 4
