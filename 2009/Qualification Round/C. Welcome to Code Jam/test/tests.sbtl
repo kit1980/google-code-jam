@@ -1,0 +1,17 @@
+picat WelcomeToCodeJam.pi
+
+<
+3
+elcomew elcome to code jam
+wweellccoommee to code qps jam
+welcome to codejam
+>
+Case #1: 0001
+Case #2: 0256
+Case #3: 0000
+
+< cat test/C-small-practice.in
+> cat test/C-small-practice.out
+
+< cat test/C-large-practice.in
+> cat test/C-large-practice.out

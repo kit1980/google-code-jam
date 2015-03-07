@@ -1,0 +1,34 @@
+% Google Code Jam
+% Qualification Round 2009
+% C. Welcome to Code Jam
+% https://code.google.com/codejam/contest/90101/dashboard#s=p2&a=2
+%
+% Top-down dynamic programming solution in Picat.
+%
+% Author: Sergey Dymchenko <kit1980@gmail.com>
+%
+% Picat 0.9 - http://picat-lang.org
+
+s() = to_array("welcome to code jam").
+
+table
+ways(_, _, 0) = 1.
+ways(_, 0, _) = 0.
+ways(T, I, J) = W =>
+    S = s(),
+    if T[I] == S[J] then
+        W = (ways(T, I - 1, J) + ways(T, I - 1, J - 1)) mod 10000
+    else
+        W = ways(T, I - 1, J)
+    end.
+
+do_case(Case_num, T) =>
+    W = ways(T, length(T), length(s())),
+    printf("Case #%w: %04d\n", Case_num, W).
+
+main =>
+    N = read_int(),
+    foreach(Case_num in 1..N)
+       T = to_array(read_line()),
+       do_case(Case_num, T)
+    end.
