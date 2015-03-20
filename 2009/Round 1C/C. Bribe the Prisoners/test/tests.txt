@@ -1,3 +1,4 @@
+picat BribeThePrisoners.pi
 prologify | compile-run BribeThePrisoners.pl
 
 <
