@@ -1,0 +1,35 @@
+% Google Code Jam
+% Round 1C 2009
+% C. Bribe the Prisoners
+% https://code.google.com/codejam/contest/189252/dashboard#s=p2
+%
+% Top-down dynamic programming solution in Picat.
+%
+% Author: Sergey Dymchenko <kit1980@gmail.com>
+%
+% Picat 0.9 - http://picat-lang.org
+
+table (+, +, +, min)
+cost(A, B, FreeList, Cost) ?=>
+    foreach(X in FreeList)
+        (X < A ; X > B)
+    end,
+    Cost = 0.
+cost(A, B, FreeList, Cost) ?=>
+    member(X, FreeList),
+    X >= A, X =< B,
+    cost(A, X - 1, FreeList, CostLeft),
+    cost(X + 1, B, FreeList, CostRight),
+    Cost = B - A + CostLeft + CostRight.
+
+do_case(Case_num, P, FreeList) =>
+    cost(1, P, FreeList, Cost),
+    printf("Case #%w: %w\n", Case_num, Cost).
+
+main =>
+    N = read_int(),
+    foreach(Case_num in 1..N)
+       P = read_int(), Q = read_int(),
+       FreeList = [read_int() : _I in 1..Q],
+       do_case(Case_num, P, FreeList)
+    end.
